@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #ffffff;
+  background-color: #B0E0F6;
 }
 
 .division {
@@ -27,8 +27,8 @@
   align-items: center;
   justify-content: center;
 
-  background-color: #ffffff;
-
+  background-color: #B0E0F6;
+ 
 
   text-align: center;
 }
@@ -38,7 +38,7 @@
   font-size: 3rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #012265;
+  color: #003B72;
 }
 
 .info h2 {
@@ -46,6 +46,7 @@
   font-weight: 400;
   margin-top: 2rem;
   color: #999;
+  text-shadow: 1px 1px 1px black;
 }
 
 .linkin {

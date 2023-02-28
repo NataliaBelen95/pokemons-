@@ -3,9 +3,7 @@ const { Pokemon, Type } = require("../db");
 
 // GET A LOS DATOS DE LA API
 const getApiData = async () => {
-  const apiPage1 = await axios.get(
-    "https://pokeapi.co/api/v2/pokemon?limit=40"
-  );
+  const apiPage1 = await axios.get("https://pokeapi.co/api/v2/pokemon");
   const apiPage2 = await axios.get(apiPage1.data.next);
   const pokemons = [...apiPage1.data.results, ...apiPage2.data.results];
 
@@ -76,37 +74,3 @@ const getAllPokemons = async () => {
 };
 
 module.exports = getAllPokemons;
-
-/*const getApiData = async () => {
-  try {
-    const apiData = await axios
-      .get("https://pokeapi.co/api/v2/pokemon?limit=40")
-      .then((data) => {
-        return data.data.results;
-      })
-      .then((data) => {
-        return Promise.all(data.map((res) => axios.get(res.url))); // ENTRAR A CADA ELEMENTO Y HACERLE UN GET A SU URL
-      })
-      .then((data) => {
-        return data.map((res) => res.data); // RESULTADO FINAL DE CADA POKEMON CON TODOS SUS DATOS, SE GUARDAN EN RESP.
-      });
-    let pokemons = apiData.map((p) => {
-      //DENTRO DE UN ARRAY ME TRAIGO TODAS LAS PROPIEDADES QUE QUIERO DE CADA POKEMON.
-      return {
-        id: p.id,
-        name: p.name,
-        types: p.types.map((t) => t.type.name), //lOS TIPOS ESTAN EN SU PROPIEDAD NAME
-        image: p.sprites.front_default,
-        life: p.stats[0].base_stat,
-        attack: p.stats[1].base_stat,
-        defense: p.stats[2].base_stat,
-        speed: p.stats[3].base_stat,
-        height: p.height,
-        weight: p.weight,
-      };
-    });
-    return pokemons;
-  } catch (error) {
-    return { error: error.message };
-  }
-};*/
