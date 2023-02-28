@@ -19,12 +19,13 @@
  
  .contenedor {
    padding: 1rem;
+ 
  }
  
  .typePokeDiv h2{
    color: #ffffff;
    text-shadow: 1px 1px 2px #000000;
- 
+   max-width: 100%;
  }
  
  .namePokeDiv {
@@ -47,9 +48,12 @@ text-align: center;
    display: flex;
    justify-content: center;
    align-items: center;
+
  }
  
  .divImg img {
-   max-width: 100%;
-   height: auto;
+   
+  max-width: 50%;
+ 
+ 
  }
