@@ -1,0 +1,81 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Asul&family=Barlow+Semi+Condensed:wght@300&family=Concert+One&display=swap');
+
+
+.CardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 16rem));
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+
+  
+
+}
+.filterContainer{
+  display: inline-block;
+  margin:0.2rem;
+  
+
+}
+
+.selects{
+  background: linear-gradient(45deg, #EE4025, #E17926);
+  border: none;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px #000000;
+  font-weight: bold;
+  padding: 10px;
+  width: 10rem;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  margin:1rem
+  }
+
+
+
+
+
+  .selects option {
+    color: #000;
+    background-color: #fff;
+    font-size: 1rem;
+    font-family: sans-serif;
+    }
+
+    .selects:hover{
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      }
+
+
+
+.linkecito{
+  text-decoration: none;
+}
+
+
+.loader {
+  width: 35px;
+  height: 35px;
+  border: 5px solid #FFF;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 

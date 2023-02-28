@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Roboto:ital,wght@1,900&family=Rubik+Vinyl&display=swap');
+
+
+
+.LandingCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+.division {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.info {
+  
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #ffffff;
+
+
+  text-align: center;
+}
+
+
+.info h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #012265;
+}
+
+.info h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-top: 2rem;
+  color: #999;
+}
+
+.linkin {
+  width: 100px;
+  height: 100px;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.division2 {
+  display: flex;
+  justify-content: center;
+}
+
+.imgAsh {
+  margin-top: 2rem;
+  width: 100%;
+  
+}
+
+.imgAsh img {
+  width: 500px;
+  height: 300px;
+  object-fit: contain;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.linkin {
+  width :50px;
+  height: 60px;
+  margin-top: 20px;
+  filter: drop-shadow(2px 1px 2px  #000000);
+}
+  
+.linkin:hover{
+    animation: rebote 0.5s;
+    animation-iteration-count: 1;
+  }
+  
+  @keyframes rebote {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    75% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+
+
+
+
+  
+ 
+
+  @media screen and (max-width: 858px) {
+    .LandingCont {
+      flex-direction: column;
+      width: 100%;
+      margin: 0 auto;
+      margin-top: 5rem;
+    }
+  
+   .division{
+    width: 100%;
+    order: 1;
+  
+   }
+    
+   .division2{
+    box-shadow: 0px 0px 0px;
+   }
+  
+
+  
+    .info {
+      width:80%;
+   
+      margin-top: 2rem; /* Añadimos un margen superior para separar los elementos */
+      order: 2; /* Reordenamos el orden de los elementos */
+      text-align: center;
+       
+    }
+  
+    .imgAsh img {
+      width: 100%;
+    }
+  }

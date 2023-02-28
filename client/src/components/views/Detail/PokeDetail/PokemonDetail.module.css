@@ -1,0 +1,101 @@
+.detailContainer {
+  width: 400px;
+  height: 600px;
+  justify-content: center;
+  background-color: #FF3D00;
+  margin-top: 1rem;
+  margin: 100px auto ;
+  opacity: 0.3;
+  transition: 0.5s;
+border-radius: 2rem;
+
+
+
+
+}
+
+.detailContainer:hover {
+ opacity: 0.9;
+ box-shadow: 0px 2px 2px 3px black;
+
+
+}
+
+.imgDetail {
+    width: 15rem;
+    margin: auto;
+    background-color: antiquewhite;
+    border-bottom: 2px solid black;
+    border-left:2px solid black;
+    border-right: 2px solid black ;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+
+ 
+
+
+}
+
+
+.imgDetail img{
+    width: 15rem;
+    
+    
+   
+}
+
+
+
+.backHome{
+    border: none;
+    background: linear-gradient(45deg, #EE4025, #E17926);
+    
+    margin-left: 2rem;
+    border-radius: 2rem;
+    font-size:15px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    text-shadow: 0px 1px 1px #ffffff;
+    transition: 0.5s;
+    padding: 1rem 1rem;
+    width: 8rem;
+    opacity: 0.3;
+    font-weight: bold;
+    
+
+}
+
+.backHome:hover {
+    opacity: 1;
+}
+
+
+
+.backHomeLink{
+  text-decoration: none;
+  color: #000000;
+  cursor:pointer
+
+}
+
+
+
+    .loader {
+      width: 35px;
+      height: 35px;
+      border: 5px solid #FFF;
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      display: inline-block;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+      }
+    
+      @keyframes rotation {
+      0% {
+          transform: rotate(0deg);
+      }
+      100% {
+          transform: rotate(360deg);
+      }
+      } 

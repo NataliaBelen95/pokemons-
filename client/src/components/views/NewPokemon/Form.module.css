@@ -1,0 +1,140 @@
+@import url("//fonts.googleapis.com/css2?family=Architects+Daughter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+
+
+
+
+
+  
+  /* Style form container */
+  .containerForm {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+ 
+
+  }
+  
+  /* Style form div */
+  .formDiv {
+    position: relative;
+    padding: 1rem;
+    background-color: #fee440;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    border-radius: 0.5rem;
+    font-family: 'Nanum Gothic Coding', monospace;
+    width: 25rem;
+    margin: 0 auto;
+  }
+  
+  /* Style form title */
+  .title h2 {
+    font-size: 2rem;
+    color:  black;
+  
+  
+    text-align: center;
+    margin-bottom: 0.3rem;
+    font-family: 'Nanum Gothic Coding', monospace;
+  }
+  
+  /* Style form inputs */
+  .input {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    margin: auto 0;
+  }
+  
+  /* Style form labels */
+  .inputsNames {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .groupInputs{
+    margin-bottom: 30px;
+  }
+  
+  /* Style form select */
+  .selectTypes {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    background-color: #fff;
+  }
+  
+  /* Style form errors */
+  p {
+    color: red;
+  
+    display: block;
+    position: absolute;
+   
+    padding: 5px;
+ 
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 0.8rem;
+   
+   
+
+  }
+  
+  /* Style form button */
+  .btnSubmit {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #EE4025;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btnSubmit:hover {
+    background-image:linear-gradient(45deg, #EE4025, #E17926);
+  }
+  
+  /* Style form delete button */
+  .btnDelete {
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+    color: #fff;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btnDelete:hover {
+    background-color: #c82333;
+  }
+
+  .imgForm {
+    position:absolute;
+    display:inline-block;
+    transform:translatex(-600px) translatey(-900px);
+    margin: 2rem
+
+    
+  }
+  .imgForm img{
+    
+   
+    width: 15rem;
+  }
