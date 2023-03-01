@@ -32,35 +32,39 @@ const Form = () => {
     attack: "",
     image: "",
     defense: "",
-    weight: "",
-    height: "",
-    speed: "",
+    weight: 0,
+    height: 0,
+    speed: 0,
     types: [],
+  });
+  const [touched, setTouched] = useState({
+    name: false,
+    life: false,
+    attack: false,
+    image: false,
+    defense: false,
+    weight: false,
+    height: false,
+    speed: false,
+    types: false,
   });
 
-  const [errors, setErrors] = useState({
-    name: "",
-    attack: "",
-    image: "",
-    defense: "",
-    weight: "",
-    height: "",
-    speed: "",
-    types: [],
-  });
+  const handleBlur = (e) => {
+    const field = e.target.name;
+    setTouched({ ...touched, [field]: true });
+  };
+
+  const errors = validation(input);
   // manejador de event. seteo input/ primero me hago copia
   const handleInputChange = (e) => {
     setInput({
       ...input,
       [e.target.name]: e.target.value,
-      // event objeto donde esta target.  que es un obj.  y tiene propiedad name(nombre del input donde el usuario escribe) y value(valor de lo que esta poniendo el user)
+      touched: {
+        ...input.touched,
+        [e.target.name]: true,
+      },
     });
-    setErrors(
-      validation({
-        ...input, //copia del input
-        [e.target.name]: e.target.value,
-      })
-    );
   };
 
   const handleSubmit = (e) => {
@@ -68,17 +72,7 @@ const Form = () => {
 
     // Validar que los campos requeridos estén completos, incluyendo al menos un tipo
 
-    if (
-      input.name &&
-      input.life &&
-      input.attack &&
-      input.defense &&
-      input.image &&
-      input.types.length >= 1 &&
-      input.speed &&
-      input.weight &&
-      input.height
-    ) {
+    if (Object.keys(errors).length === 0) {
       // Enviar los datos si no hay errores --> dispatch newPokemon
       dispatch(postPokemon(input));
       alert("Your Pokemon was created successfully");
@@ -94,20 +88,11 @@ const Form = () => {
         speed: "",
         types: [],
       });
-      setErrors({
-        name: "",
-        attack: "",
-        image: "",
-        defense: "",
-        speed: "",
-        weight: "",
-        height: "",
-        types: [], //actualizar el estado de errors al mismo tiempo que el estado de input
-      });
 
       history.push("/home");
     } else {
-      window.alert("Please complete all");
+      console.log(errors);
+      window.alert("Please complete all, and check the errors");
     }
   };
 
@@ -119,10 +104,6 @@ const Form = () => {
       setInput({
         ...input,
         types: [...input.types, e.target.value],
-      });
-
-      setErrors({
-        types: [], //para que se actualice , si seleccionan 2 y despues lo sacan, etc.
       });
     }
   };
@@ -149,8 +130,9 @@ const Form = () => {
                 value={input.name}
                 name="name"
                 onChange={(e) => handleInputChange(e)}
+                onBlur={(e) => handleBlur(e)}
               />
-              {errors.name && <p>{errors.name}</p>}
+              {touched.name && errors.name && <p>{errors.name}</p>}
             </div>
             <div className={style.groupInputs}>
               <label htmlFor="life" className={style.inputsNames}>
@@ -159,13 +141,14 @@ const Form = () => {
               <input
                 className={style.input}
                 type="number"
+                min={1}
+                max={100}
                 value={input.life}
                 name="life"
-                min="1"
-                max="200"
                 onChange={(e) => handleInputChange(e)}
+                onBlur={(e) => handleBlur(e)}
               />
-              {errors.life && <p>{errors.life}</p>}
+              {touched.life && errors.life && <p>{errors.life}</p>}
             </div>
             <div className={style.groupInputs}>
               <label htmlFor="attack" className={style.inputsNames}>
@@ -174,13 +157,14 @@ const Form = () => {
               <input
                 className={style.input}
                 type="number"
+                min={1}
+                max={200}
                 value={input.attack}
                 name="attack"
-                min="1"
-                max="200"
                 onChange={(e) => handleInputChange(e)}
+                onBlur={(e) => handleBlur(e)}
               />
-              {errors.attack && <p>{errors.attack}</p>}
+              {touched.attack && errors.attack && <p>{errors.attack}</p>}
             </div>
             <div className={style.groupInputs}>
               <label htmlFor="defense" className={style.inputsNames}>
@@ -189,26 +173,28 @@ const Form = () => {
               <input
                 className={style.input}
                 type="number"
+                min={1}
+                max={200}
                 value={input.defense}
                 name="defense"
-                min="1"
-                max="200"
                 onChange={(e) => handleInputChange(e)}
+                onBlur={(e) => handleBlur(e)}
               />
-              {errors.defense && <p>{errors.defense}</p>}
+              {touched.defense && errors.defense && <p>{errors.defense}</p>}
             </div>
             <div className={style.groupInputs}>
               <label className={style.inputsNames}>Height:</label>
               <input
                 className={style.input}
                 type="number"
+                min={0}
+                max={200}
                 value={input.height}
                 name="height"
-                min="0"
-                max="400"
                 onChange={(e) => handleInputChange(e)}
+                onBlur={(e) => handleBlur(e)}
               />{" "}
-              {errors.height && <p>{errors.height}</p>}
+              {touched.height && errors.height && <p>{errors.height}</p>}
             </div>
             <div className={style.groupInputs}>
               <label htmlFor="weight" className={style.inputsNames}>
@@ -217,13 +203,14 @@ const Form = () => {
               <input
                 className={style.input}
                 type="number"
+                min={0}
+                max={200}
                 value={input.weight}
                 name="weight"
-                min="0"
-                max="400"
                 onChange={(e) => handleInputChange(e)}
+                onBlur={(e) => handleBlur(e)}
               />{" "}
-              {errors.weight && <p>{errors.weight}</p>}
+              {touched.weight && errors.weight && <p>{errors.weight}</p>}
             </div>
             <div className={style.groupInputs}>
               <label htmlFor="speed" className={style.inputsNames}>
@@ -232,13 +219,14 @@ const Form = () => {
               <input
                 className={style.input}
                 type="number"
+                min={0}
+                max={100}
                 value={input.speed}
                 name="speed"
-                min="0"
-                max="200"
                 onChange={(e) => handleInputChange(e)}
-              />{" "}
-              {errors.speed && <p>{errors.speed}</p>}
+                onBlur={(e) => handleBlur(e)}
+              />
+              {touched.speed && errors.speed && <p>{errors.speed}</p>}
             </div>
 
             <div className={style.groupInputs}>
@@ -250,9 +238,10 @@ const Form = () => {
                 type="text"
                 value={input.image}
                 name="image"
-                onChange={handleInputChange}
+                onChange={(e) => handleInputChange(e)}
+                onBlur={(e) => handleBlur(e)}
               />
-              {errors.image && <p>{errors.image}</p>}
+              {touched.image && errors.image && <p>{errors.image}</p>}
             </div>
             <div className={style.groupInputs}>
               <label htmlFor="types" className={style.inputsNames}>
@@ -261,6 +250,7 @@ const Form = () => {
               <select
                 className={style.selectTypes}
                 onChange={handlerSelect}
+                onBlur={(e) => handleBlur(e)}
                 disabled={input.types.length === 2}
               >
                 <option value="">Select Type</option>
