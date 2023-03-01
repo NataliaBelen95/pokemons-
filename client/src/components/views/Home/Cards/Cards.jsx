@@ -14,7 +14,7 @@ import {
 } from "../../../../redux/actions/actions";
 import SearchBar from "../../SearchBar/SearchBar";
 
-const Cards = () => {
+const Cards = ({ id }) => {
   const dispatch = useDispatch();
   const pokemons = useSelector((state) => state.pokemons);
   const typesPokemon = useSelector((state) => state.allTypes);
@@ -30,6 +30,11 @@ const Cards = () => {
     indexOfFirstPokemon,
     indexOfLastPokemon
   );
+
+  /*const handlerClick = (e) => {      //RELOAD HANDLERCLICK
+    e.preventDefault();
+    dispatch(getAllPokemons());
+  };*/
 
   useEffect(() => {
     dispatch(getAllPokemons()).then(() => setLoading(false));
@@ -83,6 +88,9 @@ const Cards = () => {
         </div>
       ) : (
         <div className={style.contCards}>
+          {/* <button className={style.botoncito} onClick={handlerClick}>
+            reload
+          </button> */}
           <div className={style.contSearch}>
             <SearchBar setCurrentPage={setCurrentPage} />
           </div>
@@ -165,7 +173,7 @@ const Cards = () => {
             })}
             <Paginado
               pokemonsPerPage={pokemonsPerPage}
-              totalPokemons={pokemons.length}
+              totalPokemons={pokemons?.length}
               paginate={paginado}
               currentPage={currentPage}
             />

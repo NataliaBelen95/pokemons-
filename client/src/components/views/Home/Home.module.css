@@ -46,7 +46,7 @@
 .botonContainer {
   display: flex;
   align-items: center;
-  gap: 1rem;
+ 
 }
 
 .botoncito_2 {
@@ -58,7 +58,8 @@
   font-size: 20px;
   cursor: pointer;
   margin: auto 0;
-  text-shadow: 0px 1px 1px #ffffff;
+  margin-top: 1rem;
+  margin-left: 1.5rem;
   transition: 0.5s;
   padding: 1rem 1rem;
 
@@ -68,33 +69,11 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.botoncito{
-  border: none;
-  background:  transparent;
- 
-  display: flex;
-  border-radius: 8px;
-  font-size: 20px;
-  cursor: pointer;
-  width: 2rem;
-  margin: 2rem;
-  text-shadow: 0px 1px 1px #ffffff;
-  transition: 0.5s;
-  
 
 
-}
-
-.botoncito:hover{
-  transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-      background: linear-gradient(45deg, #EE4025, #E17926);
-}
 
 
-.botoncito img{
-  width: 2rem;
-}
+
 
 
 

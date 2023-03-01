@@ -9,7 +9,7 @@
 
 .searchInput {
   flex: 1;
-  padding: 1rem;
+  padding: 0.5rem;
   border: none;
   border-radius: 5px;
   background-color: #f2f2f2;
@@ -24,7 +24,7 @@
 }
 
 .searchButton {
-  padding: 1rem;
+  padding: 0.5rem;
   border: none;
   border-radius: 5px;
   background-color: #E95725;

@@ -23,7 +23,7 @@ export const getAllPokemons = () => {
         payload: data, // data ->lo que me devuelve la aciton
       });
     } catch (error) {
-      return error.message;
+      return error.response.data;
     }
   };
 };
@@ -56,7 +56,7 @@ export const getTypes = () => {
       const response = await axios.get("http://localhost:3001/types", {});
       return dispatch({ type: GET_TYPES, payload: response.data });
     } catch (error) {
-      return error.message;
+      return error.response.data;
     }
   };
 };
@@ -88,7 +88,7 @@ export const getPokemonsNames = (name) => {
         payload: dataName.data,
       });
     } catch (error) {
-      return alert(`Pokemon ${name} not found`);
+      return alert(error.response.data);
     }
   };
 };
